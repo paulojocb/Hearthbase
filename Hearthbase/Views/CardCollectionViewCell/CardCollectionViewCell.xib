@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CardCollectionViewCell" customModule="Hearthbase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="144" height="228"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="144" height="228"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSa-DF-fxo">
+                        <rect key="frame" x="0.0" y="0.0" width="144" height="228"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zqz-Fu-GgC">
+                                <rect key="frame" x="0.0" y="-18" width="144" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zqz-Fu-GgC" secondAttribute="height" multiplier="24:35" constant="-6.1714285714285779" id="R14-SM-wax"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4fl-tM-OyD">
+                                <rect key="frame" x="62" y="95" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carta sem imagem" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g26-Sh-Ku7">
+                                <rect key="frame" x="0.0" y="85" width="144" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpm-B1-TgS">
+                                <rect key="frame" x="0.0" y="194" width="144" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Cwg-Le-Q67"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="g26-Sh-Ku7" secondAttribute="trailing" id="3VK-GW-vPj"/>
+                            <constraint firstAttribute="trailing" secondItem="qpm-B1-TgS" secondAttribute="trailing" id="46m-A7-4CW"/>
+                            <constraint firstAttribute="trailing" secondItem="zqz-Fu-GgC" secondAttribute="trailing" id="5a9-GM-ZGN"/>
+                            <constraint firstItem="qpm-B1-TgS" firstAttribute="leading" secondItem="FSa-DF-fxo" secondAttribute="leading" id="9Xo-dF-G6a"/>
+                            <constraint firstItem="4fl-tM-OyD" firstAttribute="leading" secondItem="FSa-DF-fxo" secondAttribute="leading" constant="62" id="BCM-sA-UE1"/>
+                            <constraint firstItem="g26-Sh-Ku7" firstAttribute="top" secondItem="FSa-DF-fxo" secondAttribute="top" constant="85" id="DET-O0-g5Q"/>
+                            <constraint firstAttribute="bottom" secondItem="qpm-B1-TgS" secondAttribute="bottom" id="JTb-sZ-PV0"/>
+                            <constraint firstItem="4fl-tM-OyD" firstAttribute="top" secondItem="FSa-DF-fxo" secondAttribute="top" constant="95" id="brV-fe-hxu"/>
+                            <constraint firstItem="zqz-Fu-GgC" firstAttribute="leading" secondItem="FSa-DF-fxo" secondAttribute="leading" id="ciS-MA-4a7"/>
+                            <constraint firstItem="g26-Sh-Ku7" firstAttribute="leading" secondItem="FSa-DF-fxo" secondAttribute="leading" id="gIA-cp-L0B"/>
+                            <constraint firstItem="zqz-Fu-GgC" firstAttribute="top" secondItem="FSa-DF-fxo" secondAttribute="top" constant="-18" id="pKq-Nv-oTd"/>
+                            <constraint firstAttribute="trailing" secondItem="4fl-tM-OyD" secondAttribute="trailing" constant="62" id="t0c-AJ-HrL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="FSa-DF-fxo" secondAttribute="trailing" id="DPf-Xr-R8t"/>
+                <constraint firstItem="FSa-DF-fxo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="g8h-Iw-Umo"/>
+                <constraint firstItem="FSa-DF-fxo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gdq-Rq-rBF"/>
+                <constraint firstAttribute="bottom" secondItem="FSa-DF-fxo" secondAttribute="bottom" id="swV-f3-THH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="218" height="328"/>
+            <connections>
+                <outlet property="activityIndicator" destination="4fl-tM-OyD" id="BP6-lA-Xac"/>
+                <outlet property="imageView" destination="zqz-Fu-GgC" id="gLA-kz-Z31"/>
+                <outlet property="noCardLabel" destination="g26-Sh-Ku7" id="U1z-t9-6BE"/>
+                <outlet property="roundedView" destination="FSa-DF-fxo" id="fAG-W8-bSR"/>
+                <outlet property="titleLabel" destination="qpm-B1-TgS" id="zxN-ip-NWO"/>
+            </connections>
+            <point key="canvasLocation" x="272" y="284.25787106446779"/>
+        </collectionViewCell>
+    </objects>
+</document>
