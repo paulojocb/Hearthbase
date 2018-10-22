@@ -165,6 +165,11 @@ extension CardViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         controller.card = cell.card
         
+        let modalFrame = cell.roundedView.frame
+        let imageFrame = cell.imageView.frame
+
+        controller.customTransitionInfo = CustomTransitionInfo.init(modalFrame: modalFrame, imageFrame: imageFrame)
+        controller.modalPresentationStyle = .custom
         present(controller, animated: true, completion: nil)
         
     }

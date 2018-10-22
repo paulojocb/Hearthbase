@@ -9,7 +9,15 @@
 import UIKit
 import CoreData
 
+struct CustomTransitionInfo {
+    var modalFrame: CGRect
+    var imageFrame: CGRect
+}
+
 class CardModalViewController: UIViewController {
+    
+    var customTransitionInfo: CustomTransitionInfo!
+    var isPresenting = false
     
     var shadowLayer: CAShapeLayer!
 
@@ -25,6 +33,12 @@ class CardModalViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     
     var card: Card!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        transitioningDelegate = self
+        modalPresentationStyle = .custom
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -48,6 +62,12 @@ class CardModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        modalView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        imageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        
+        view.backgroundColor = UIColor.black.withAlphaComponent(0)
+        backdropView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         
         modalView.layer.cornerRadius = 16.0
         modalView.layer.masksToBounds = true
@@ -101,5 +121,70 @@ class CardModalViewController: UIViewController {
         }
     
     }
+}
+
+extension CardModalViewController: UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.4
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let containerView = transitionContext.containerView
+        let toViewController = transitionContext.viewController(forKey: .to)
+        
+        guard
+            let toVC = toViewController,
+            let customInfo = customTransitionInfo
+            else { return }
+        
+        isPresenting = !isPresenting
+        
+        if isPresenting {
+            containerView.addSubview(toVC.view)
+            
+            modalView.alpha = 0
+            
+            modalView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            imageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            
+            print(modalView.frame)
+            
+            self.backdropView.backgroundColor = UIColor.black.withAlphaComponent(0)
+            
+            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
+                self.modalView.frame = CGRect(x: 16, y: 200, width: UIScreen.main.bounds.width - 32, height: 400)
+                self.imageView.frame = CGRect(x: 200, y: 100, width: 144, height: 228)
+                self.modalView.alpha = 1
+                self.backdropView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+            }) { (finished) in
+                transitionContext.completeTransition(true)
+            }
+            
+        } else {
+            
+            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
+                self.modalView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+                self.imageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+                self.modalView.alpha = 0
+                self.backdropView.backgroundColor = UIColor.black.withAlphaComponent(0)
+            }) { (finished) in
+                transitionContext.completeTransition(true)
+            }
+            
+        }
+    }
+    
+    
+
+    
 }
 
