@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct Card {
+    var id: String!
     var name: String!
     var attack: Int!
     var defense: Int!

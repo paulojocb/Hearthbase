@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CardCD" representedClassName="CardCD" syncable="YES" codeGenerationType="class"/>
     <entity name="CardCoreData" representedClassName="CardCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="attack" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="defense" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -9,10 +8,7 @@
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <elements>
-        <element name="CardCD" positionX="-63" positionY="-18" width="128" height="45"/>
-        <element name="CardCoreData" positionX="-63" positionY="27" width="128" height="135"/>
-        <element name="Entity" positionX="-517.26171875" positionY="36.7734375" width="128" height="43"/>
+        <element name="CardCoreData" positionX="-45" positionY="0" width="128" height="135"/>
     </elements>
 </model>

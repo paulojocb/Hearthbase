@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct CardModel: Codable {
+    let id: String!
     let name: String!
     let attack: Int!
     let defense: Int!
@@ -17,6 +18,7 @@ struct CardModel: Codable {
     let info: String!
     
     enum CodingKeys: String, CodingKey {
+        case id = "cardId"
         case name
         case attack
         case defense = "health"

@@ -17,11 +17,13 @@ class RequestHandler: NSObject {
     
     var delegate: RequestHandlerDelegate?
     
-    func requestData() {
+    func request(card: String = "", with filter: Filter! = nil) {
         
         print("Requesting Data")
         
-        let url = URL(string: "https://omgvamp-hearthstone-v1.p.mashape.com/cards/races/Demon")
+        let params = card == "" ? "/classes/Neutral" : "/search/\(card)"
+ 
+        let url = URL(string: "https://omgvamp-hearthstone-v1.p.mashape.com/cards\(params)?locale=ptBR")
         var request = URLRequest(url: url!)
         
         request.httpMethod = "GET"
@@ -41,12 +43,20 @@ class RequestHandler: NSObject {
             
             do {
                 let decoder = JSONDecoder()
-                let result = try decoder.decode([CardModel].self, from: data)
+                var result = try decoder.decode([CardModel].self, from: data)
+                
+                if filter != nil {
+                    result = result.filter { $0.attack ?? 0 > filter.minAttack && $0.defense ?? 0 > filter.minDefense }
+                }
+                
                 DispatchQueue.main.async {
                     self.delegate?.didReceiveData(data: result)
                 }
             } catch {
-                print(error)
+                DispatchQueue.main.async {
+                    self.delegate?.didFetchFail(error: error)
+                }
+
             }
             
             

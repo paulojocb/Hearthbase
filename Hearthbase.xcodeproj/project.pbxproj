@@ -10,14 +10,18 @@
 		2B1BA333217A013B00E597A4 /* UserFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1BA332217A013B00E597A4 /* UserFilter.swift */; };
 		2B1BA335217A038700E597A4 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1BA334217A038700E597A4 /* GameInfo.swift */; };
 		2B8566982177928C00D95BC6 /* CardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B8566972177928C00D95BC6 /* CardViewController.storyboard */; };
+		2B930420217F58E100C43D70 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93041F217F58E100C43D70 /* CoreDataHandler.swift */; };
+		2B930422217F6E7D00C43D70 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B930421217F6E7D00C43D70 /* Filter.swift */; };
 		2BBF4E4C2178B28300F87615 /* CardModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF4E4B2178B28300F87615 /* CardModalViewController.storyboard */; };
 		2BBF4E4E2178B29700F87615 /* CardModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF4E4D2178B29700F87615 /* CardModalViewController.swift */; };
 		2BBF4E502178BCB400F87615 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF4E4F2178BCB400F87615 /* Card.swift */; };
 		2BBF4E532179F66B00F87615 /* FilterModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF4E522179F66B00F87615 /* FilterModalViewController.storyboard */; };
 		2BBF4E552179F67A00F87615 /* FilterModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF4E542179F67A00F87615 /* FilterModalViewController.swift */; };
+		2BC27A05217DF910006455E4 /* Hearthbase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BC27A03217DF910006455E4 /* Hearthbase.xcdatamodeld */; };
+		2BC27A07217E1383006455E4 /* TransitionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC27A06217E1383006455E4 /* TransitionState.swift */; };
+		2BC323C8217B5FCA003B1AE1 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC323C7217B5FCA003B1AE1 /* CALayer.swift */; };
 		2BC92B322177512200B60295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC92B312177512200B60295 /* AppDelegate.swift */; };
 		2BC92B372177512200B60295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC92B352177512200B60295 /* Main.storyboard */; };
-		2BC92B3A2177512200B60295 /* Hearthbase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BC92B382177512200B60295 /* Hearthbase.xcdatamodeld */; };
 		2BC92B3C2177512300B60295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC92B3B2177512300B60295 /* Assets.xcassets */; };
 		2BC92B3F2177512300B60295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC92B3D2177512300B60295 /* LaunchScreen.storyboard */; };
 		2BC92B4F21775A2D00B60295 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC92B4D21775A2D00B60295 /* CardCollectionViewCell.swift */; };
@@ -31,15 +35,20 @@
 		2B1BA332217A013B00E597A4 /* UserFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFilter.swift; sourceTree = "<group>"; };
 		2B1BA334217A038700E597A4 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		2B8566972177928C00D95BC6 /* CardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardViewController.storyboard; sourceTree = "<group>"; };
+		2B93041F217F58E100C43D70 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		2B930421217F6E7D00C43D70 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		2BBF4E4B2178B28300F87615 /* CardModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardModalViewController.storyboard; sourceTree = "<group>"; };
 		2BBF4E4D2178B29700F87615 /* CardModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModalViewController.swift; sourceTree = "<group>"; };
 		2BBF4E4F2178BCB400F87615 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2BBF4E522179F66B00F87615 /* FilterModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterModalViewController.storyboard; sourceTree = "<group>"; };
 		2BBF4E542179F67A00F87615 /* FilterModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModalViewController.swift; sourceTree = "<group>"; };
+		2BC27A04217DF910006455E4 /* Hearthbase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hearthbase.xcdatamodel; sourceTree = "<group>"; };
+		2BC27A06217E1383006455E4 /* TransitionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionState.swift; sourceTree = "<group>"; };
+		2BC27A09217F3AA1006455E4 /* Hearthbase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hearthbase.entitlements; sourceTree = "<group>"; };
+		2BC323C7217B5FCA003B1AE1 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		2BC92B2E2177512200B60295 /* Hearthbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hearthbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC92B312177512200B60295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BC92B362177512200B60295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2BC92B392177512200B60295 /* Hearthbase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hearthbase.xcdatamodel; sourceTree = "<group>"; };
 		2BC92B3B2177512300B60295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC92B3E2177512300B60295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BC92B402177512300B60295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +88,22 @@
 			path = FilterModalView;
 			sourceTree = "<group>";
 		};
+		2BC27A08217E1398006455E4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				2BC27A06217E1383006455E4 /* TransitionState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		2BC323C6217B5FBB003B1AE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2BC323C7217B5FCA003B1AE1 /* CALayer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2BC92B252177512200B60295 = {
 			isa = PBXGroup;
 			children = (
@@ -98,14 +123,17 @@
 		2BC92B302177512200B60295 /* Hearthbase */ = {
 			isa = PBXGroup;
 			children = (
+				2BC27A09217F3AA1006455E4 /* Hearthbase.entitlements */,
+				2BC27A08217E1398006455E4 /* Enums */,
+				2BC323C6217B5FBB003B1AE1 /* Extensions */,
 				2BC92B5B217766F100B60295 /* Model */,
 				2BC92B4B2177528700B60295 /* Views */,
 				2BC92B312177512200B60295 /* AppDelegate.swift */,
 				2BC92B352177512200B60295 /* Main.storyboard */,
 				2BC92B3B2177512300B60295 /* Assets.xcassets */,
 				2BC92B3D2177512300B60295 /* LaunchScreen.storyboard */,
+				2BC27A03217DF910006455E4 /* Hearthbase.xcdatamodeld */,
 				2BC92B402177512300B60295 /* Info.plist */,
-				2BC92B382177512200B60295 /* Hearthbase.xcdatamodeld */,
 			);
 			path = Hearthbase;
 			sourceTree = "<group>";
@@ -142,11 +170,13 @@
 		2BC92B5B217766F100B60295 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BBF4E4F2178BCB400F87615 /* Card.swift */,
 				2BC92B5C217766FA00B60295 /* CardModel.swift */,
 				2BC92B5E217767CF00B60295 /* RequestHandler.swift */,
-				2BBF4E4F2178BCB400F87615 /* Card.swift */,
 				2B1BA332217A013B00E597A4 /* UserFilter.swift */,
 				2B1BA334217A038700E597A4 /* GameInfo.swift */,
+				2B93041F217F58E100C43D70 /* CoreDataHandler.swift */,
+				2B930421217F6E7D00C43D70 /* Filter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +213,11 @@
 				TargetAttributes = {
 					2BC92B2D2177512200B60295 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -226,15 +261,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BC92B3A2177512200B60295 /* Hearthbase.xcdatamodeld in Sources */,
 				2BBF4E502178BCB400F87615 /* Card.swift in Sources */,
+				2B930422217F6E7D00C43D70 /* Filter.swift in Sources */,
 				2BC92B5D217766FA00B60295 /* CardModel.swift in Sources */,
 				2BC92B5821775EBC00B60295 /* CardViewController.swift in Sources */,
 				2B1BA333217A013B00E597A4 /* UserFilter.swift in Sources */,
 				2BC92B322177512200B60295 /* AppDelegate.swift in Sources */,
 				2BC92B4F21775A2D00B60295 /* CardCollectionViewCell.swift in Sources */,
+				2BC27A05217DF910006455E4 /* Hearthbase.xcdatamodeld in Sources */,
+				2B930420217F58E100C43D70 /* CoreDataHandler.swift in Sources */,
+				2BC27A07217E1383006455E4 /* TransitionState.swift in Sources */,
 				2BC92B5F217767CF00B60295 /* RequestHandler.swift in Sources */,
 				2B1BA335217A038700E597A4 /* GameInfo.swift in Sources */,
+				2BC323C8217B5FCA003B1AE1 /* CALayer.swift in Sources */,
 				2BBF4E4E2178B29700F87615 /* CardModalViewController.swift in Sources */,
 				2BBF4E552179F67A00F87615 /* FilterModalViewController.swift in Sources */,
 			);
@@ -382,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hearthbase/Hearthbase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VA7DWMQ39T;
 				INFOPLIST_FILE = Hearthbase/Info.plist;
@@ -400,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Hearthbase/Hearthbase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VA7DWMQ39T;
 				INFOPLIST_FILE = Hearthbase/Info.plist;
@@ -438,14 +479,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2BC92B382177512200B60295 /* Hearthbase.xcdatamodeld */ = {
+		2BC27A03217DF910006455E4 /* Hearthbase.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2BC92B392177512200B60295 /* Hearthbase.xcdatamodel */,
+				2BC27A04217DF910006455E4 /* Hearthbase.xcdatamodel */,
 			);
-			currentVersion = 2BC92B392177512200B60295 /* Hearthbase.xcdatamodel */;
+			currentVersion = 2BC27A04217DF910006455E4 /* Hearthbase.xcdatamodel */;
 			path = Hearthbase.xcdatamodeld;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

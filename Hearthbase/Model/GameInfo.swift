@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum ParameterType : String{
+    case cardClass = "CardClass"
+    case type = "Type"
+    case quality = "Quality"
+    case race = "Race"
+}
+
 enum CardClass : String, CaseIterable {
     case cavaleiroDaMorte = "Cavaleiro da Morte"
     case druida = "Druida"
