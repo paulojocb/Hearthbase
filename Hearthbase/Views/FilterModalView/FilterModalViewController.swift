@@ -9,9 +9,6 @@
 import UIKit
 
 class FilterModalViewController: UIViewController {
-    
-    var isPreseting = false
-    var modalHeight = UIScreen.main.bounds.height * 0.8
 
     @IBOutlet weak var backdropView: UIView!
     @IBOutlet weak var modalView: UIView!
@@ -30,16 +27,8 @@ class FilterModalViewController: UIViewController {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        modalPresentationStyle = .custom
-        transitioningDelegate = self
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         
         modalView.layer.cornerRadius = 16
         modalView.layer.masksToBounds = true
@@ -145,55 +134,4 @@ extension FilterModalViewController {
         
     }
 
-}
-
-extension FilterModalViewController: UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
-    }
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
-    }
-    
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView
-        let toViewController = transitionContext.viewController(forKey: .to)
-        
-        guard let toVC = toViewController else { return }
-        
-        isPreseting = !isPreseting
-        
-        if isPreseting {
-            
-            containerView.addSubview(toVC.view)
-            modalView.frame.origin.y += modalHeight
-            
-            self.view.alpha = 0
-            
-            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
-                self.modalView.frame.origin.y -= self.modalHeight
-                self.view.alpha = 1
-            }) { (finished) in
-                transitionContext.completeTransition(true)
-            }
-            
-        } else {
-            
-            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
-                self.modalView.frame.origin.y += self.modalHeight
-                self.view.alpha = 0
-            }) { (finished) in
-                transitionContext.completeTransition(true)
-            }
-            
-        }
-    }
-    
-    
 }

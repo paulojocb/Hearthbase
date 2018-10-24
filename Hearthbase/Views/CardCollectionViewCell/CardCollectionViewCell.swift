@@ -12,44 +12,30 @@ import CoreData
 class CardCollectionViewCell: UICollectionViewCell {
     
     var card: Card!
+
+    @IBOutlet weak var view: UIView!
     
-    var shadowLayer: CAShapeLayer!
-    
-    @IBOutlet weak var roundedView: UIView!
-    @IBOutlet weak var noCardLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var noCardView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imageView: UIImageView!
-    
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.masksToBounds = false
-            
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 10).cgPath
-            shadowLayer.fillColor = UIColor.white.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.2
-            shadowLayer.shadowRadius = 3
-            
-            roundedView.layer.insertSublayer(shadowLayer, at: 0)
-        }
-    }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        noCardLabel.alpha = 0
+        noCardView.alpha = 0
         
-//        roundedView.layer.addRoundedCorner(radius: 10)
-
+//        view.layer.cornerRadius = 16
+        view.layer.masksToBounds = false
+        
+        let shadowPath = UIBezierPath(rect: view.bounds).cgPath
+        view.layer.shadowPath = shadowPath
+        view.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
+        view.layer.shadowRadius = 5
+        
     }
     
     func configCellWith(card: NSManagedObject) {
@@ -64,7 +50,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         if card.image != nil {
             activityIndicator.startAnimating()
             activityIndicator.alpha = 1
-            self.noCardLabel.alpha = 0
+            self.noCardView.alpha = 0
             imageView.image = nil
             donwload(from: card.image)
         }
@@ -84,7 +70,7 @@ class CardCollectionViewCell: UICollectionViewCell {
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
                         self.activityIndicator.alpha = 0
-                        self.noCardLabel.alpha = 1
+                        self.noCardView.alpha = 1
                     }
                     return
             }
@@ -93,7 +79,7 @@ class CardCollectionViewCell: UICollectionViewCell {
                 self.imageView.image = image
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.alpha = 0
-                self.noCardLabel.alpha = 0
+                self.noCardView.alpha = 0
                 
                 self.imageView.contentMode = .scaleAspectFill
             }

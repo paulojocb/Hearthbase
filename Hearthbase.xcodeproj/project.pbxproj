@@ -15,7 +15,6 @@
 		2BBF4E502178BCB400F87615 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF4E4F2178BCB400F87615 /* Card.swift */; };
 		2BBF4E532179F66B00F87615 /* FilterModalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF4E522179F66B00F87615 /* FilterModalViewController.storyboard */; };
 		2BBF4E552179F67A00F87615 /* FilterModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBF4E542179F67A00F87615 /* FilterModalViewController.swift */; };
-		2BC323C8217B5FCA003B1AE1 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC323C7217B5FCA003B1AE1 /* CALayer.swift */; };
 		2BC92B322177512200B60295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC92B312177512200B60295 /* AppDelegate.swift */; };
 		2BC92B372177512200B60295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC92B352177512200B60295 /* Main.storyboard */; };
 		2BC92B3A2177512200B60295 /* Hearthbase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BC92B382177512200B60295 /* Hearthbase.xcdatamodeld */; };
@@ -37,7 +36,6 @@
 		2BBF4E4F2178BCB400F87615 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2BBF4E522179F66B00F87615 /* FilterModalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterModalViewController.storyboard; sourceTree = "<group>"; };
 		2BBF4E542179F67A00F87615 /* FilterModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModalViewController.swift; sourceTree = "<group>"; };
-		2BC323C7217B5FCA003B1AE1 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		2BC92B2E2177512200B60295 /* Hearthbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hearthbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC92B312177512200B60295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BC92B362177512200B60295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,14 +79,6 @@
 			path = FilterModalView;
 			sourceTree = "<group>";
 		};
-		2BC323C6217B5FBB003B1AE1 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				2BC323C7217B5FCA003B1AE1 /* CALayer.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		2BC92B252177512200B60295 = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +98,6 @@
 		2BC92B302177512200B60295 /* Hearthbase */ = {
 			isa = PBXGroup;
 			children = (
-				2BC323C6217B5FBB003B1AE1 /* Extensions */,
 				2BC92B5B217766F100B60295 /* Model */,
 				2BC92B4B2177528700B60295 /* Views */,
 				2BC92B312177512200B60295 /* AppDelegate.swift */,
@@ -246,7 +235,6 @@
 				2BC92B4F21775A2D00B60295 /* CardCollectionViewCell.swift in Sources */,
 				2BC92B5F217767CF00B60295 /* RequestHandler.swift in Sources */,
 				2B1BA335217A038700E597A4 /* GameInfo.swift in Sources */,
-				2BC323C8217B5FCA003B1AE1 /* CALayer.swift in Sources */,
 				2BBF4E4E2178B29700F87615 /* CardModalViewController.swift in Sources */,
 				2BBF4E552179F67A00F87615 /* FilterModalViewController.swift in Sources */,
 			);

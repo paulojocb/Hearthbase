@@ -56,7 +56,6 @@ class CardViewController: UIViewController {
         
     @IBAction func didPressFiltrar(_ sender: Any) {
         let controller = UIStoryboard(name: "FilterModalViewController", bundle: nil).instantiateViewController(withIdentifier: "FilterModalViewController") as! FilterModalViewController
-        controller.modalPresentationStyle = .custom
         present(controller, animated: true, completion: nil)
     }
     
@@ -165,11 +164,6 @@ extension CardViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         controller.card = cell.card
         
-        let modalFrame = cell.roundedView.frame
-        let imageFrame = cell.imageView.frame
-
-        controller.customTransitionInfo = CustomTransitionInfo.init(modalFrame: modalFrame, imageFrame: imageFrame)
-        controller.modalPresentationStyle = .custom
         present(controller, animated: true, completion: nil)
         
     }

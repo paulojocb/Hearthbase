@@ -9,17 +9,7 @@
 import UIKit
 import CoreData
 
-struct CustomTransitionInfo {
-    var modalFrame: CGRect
-    var imageFrame: CGRect
-}
-
 class CardModalViewController: UIViewController {
-    
-    var customTransitionInfo: CustomTransitionInfo!
-    var isPresenting = false
-    
-    var shadowLayer: CAShapeLayer!
 
     @IBOutlet weak var backdropView: UIView!
    
@@ -34,50 +24,11 @@ class CardModalViewController: UIViewController {
     
     var card: Card!
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        transitioningDelegate = self
-        modalPresentationStyle = .custom
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.masksToBounds = false
-            
-            shadowLayer.path = UIBezierPath(roundedRect: modalView.bounds, cornerRadius: 10).cgPath
-            shadowLayer.fillColor = UIColor.white.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 0.0, height: 1.0)
-            shadowLayer.shadowOpacity = 0.2
-            shadowLayer.shadowRadius = 3
-            
-            modalView.layer.insertSublayer(shadowLayer, at: 0)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        modalView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        imageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        
-        view.backgroundColor = UIColor.black.withAlphaComponent(0)
-        backdropView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-        
         modalView.layer.cornerRadius = 16.0
         modalView.layer.masksToBounds = true
-        
-        modalView.layer.shadowColor = UIColor.black.cgColor
-        modalView.layer.shadowPath = UIBezierPath(rect: modalView.bounds).cgPath
-        modalView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        modalView.layer.shadowOpacity = 0.2
-        modalView.layer.shadowRadius = 3
-        modalView.layer.masksToBounds = false
         
         buildView()
         // Do any additional setup after loading the view.
@@ -121,70 +72,5 @@ class CardModalViewController: UIViewController {
         }
     
     }
-}
-
-extension CardModalViewController: UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return self
-    }
-    
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.4
-    }
-    
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let containerView = transitionContext.containerView
-        let toViewController = transitionContext.viewController(forKey: .to)
-        
-        guard
-            let toVC = toViewController,
-            let customInfo = customTransitionInfo
-            else { return }
-        
-        isPresenting = !isPresenting
-        
-        if isPresenting {
-            containerView.addSubview(toVC.view)
-            
-            modalView.alpha = 0
-            
-            modalView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-            imageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-            
-            print(modalView.frame)
-            
-            self.backdropView.backgroundColor = UIColor.black.withAlphaComponent(0)
-            
-            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
-                self.modalView.frame = CGRect(x: 16, y: 200, width: UIScreen.main.bounds.width - 32, height: 400)
-                self.imageView.frame = CGRect(x: 200, y: 100, width: 144, height: 228)
-                self.modalView.alpha = 1
-                self.backdropView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-            }) { (finished) in
-                transitionContext.completeTransition(true)
-            }
-            
-        } else {
-            
-            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
-                self.modalView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-                self.imageView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-                self.modalView.alpha = 0
-                self.backdropView.backgroundColor = UIColor.black.withAlphaComponent(0)
-            }) { (finished) in
-                transitionContext.completeTransition(true)
-            }
-            
-        }
-    }
-    
-    
-
-    
 }
 
